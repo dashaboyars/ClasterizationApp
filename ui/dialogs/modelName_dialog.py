@@ -1,0 +1,33 @@
+import os
+
+from PyQt6.QtWidgets import QDialog, QVBoxLayout, QListWidget, QListWidgetItem, QPushButton, QHBoxLayout, QLabel, \
+    QComboBox, QDialogButtonBox, QLineEdit
+from qtpy import uic
+
+from repositories.session_repository import SessionRepository
+from ui.interaction_subsystem.feedback_manager import FeedbackManager
+
+
+class ModelNameDialog(QDialog):
+    def __init__(self, parent=None):
+        super().__init__(parent)
+        # Загружаем UI из файла
+        ui_path = os.path.join(os.path.dirname(__file__), '../../gui/dialogs/modelName_dialog.ui')
+        uic.loadUi(ui_path, self)
+        self.parent=parent
+
+        self.name = None
+        self.lineEdit = self.findChild(QLineEdit, "lineEdit")
+        self.button_box = self.findChild(QDialogButtonBox, "buttonBox")
+        self.btn_ok = self.button_box.button(QDialogButtonBox.StandardButton.Ok)
+        self.btn_cancel = self.button_box.button(QDialogButtonBox.StandardButton.Cancel)
+
+    def accept(self):
+        self.name = self.lineEdit.text()
+        if len(self.name) == 0:
+            FeedbackManager.WrongName_Warning(self.parent)
+            return
+        super().accept()
+
+    def reject(self):
+        super().reject()
