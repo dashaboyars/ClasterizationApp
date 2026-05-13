@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>changeName_dialog</class>
+ <widget class="QDialog" name="changeName_dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>450</width>
+    <height>130</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Переименование</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">
+    /* Общий стиль диалога */
+    QDialog {
+        background-color: #f0f2f5;
+        font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+    }
+    /* Стиль метки */
+    QLabel {
+        color: #1e293b;
+        font-size: 13px;
+        font-weight: 500;
+        margin-bottom: 8px;
+    }
+    /* Поле ввода */
+    QLineEdit {
+        background-color: white;
+        border: 1px solid #cbd5e1;
+        border-radius: 8px;
+        padding: 8px 12px;
+        font-size: 13px;
+        color: #0f172a;
+        selection-background-color: #3b82f6;
+    }
+    QLineEdit:focus {
+        border: 1px solid #3b82f6;
+        outline: none;
+    }
+    /* Кнопки */
+    QPushButton {
+        background-color: transparent;
+        border: none;
+        border-radius: 8px;
+        padding: 8px 16px;
+        font-size: 13px;
+        font-weight: 500;
+        color: #1e293b;
+        min-width: 70px;
+    }
+    QPushButton:hover {
+        background-color: #e2e8f0;
+    }
+    QPushButton:pressed {
+        background-color: #cbd5e1;
+    }
+    QPushButton[text="OK"] {
+        background-color: #3b82f6;
+        color: white;
+    }
+    QPushButton[text="OK"]:hover {
+        background-color: #2563eb;
+    }
+    QPushButton[text="Cancel"]:hover {
+        background-color: #fee2e2;
+        color: #dc2626;
+    }
+   </string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="leftMargin">
+    <number>20</number>
+   </property>
+   <property name="topMargin">
+    <number>20</number>
+   </property>
+   <property name="rightMargin">
+    <number>20</number>
+   </property>
+   <property name="bottomMargin">
+    <number>20</number>
+   </property>
+   <item>
+    <widget class="QLabel" name="label">
+     <property name="text">
+      <string>Укажите новое имя элемента:</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLineEdit" name="lineEdit"/>
+   </item>
+   <item>
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>changeName_dialog</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>248</x>
+     <y>254</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>157</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>changeName_dialog</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>316</x>
+     <y>260</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>286</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

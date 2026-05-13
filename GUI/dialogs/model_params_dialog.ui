@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>model_params_dialog</class>
+ <widget class="QDialog" name="model_params_dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>650</width>
+    <height>350</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>600</width>
+    <height>330</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Управление моделями</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">
+    QDialog {
+        background-color: #f0f2f5;
+        font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+    }
+    QTableView {
+        background-color: white;
+        border: none;
+        border-radius: 12px;
+        alternate-background-color: #f8fafc;
+        selection-background-color: #e0f2fe;
+        selection-color: #0f172a;
+        gridline-color: #e2e8f0;
+        font-size: 12px;
+    }
+    QHeaderView::section {
+        background-color: #f8fafc;
+        color: #0f172a;
+        padding: 6px;
+        border: none;
+        border-bottom: 1px solid #e2e8f0;
+        font-weight: 600;
+    }
+    QPushButton {
+        background-color: transparent;
+        border: none;
+        border-radius: 8px;
+        padding: 8px 16px;
+        font-size: 13px;
+        font-weight: 500;
+        color: #1e293b;
+        min-width: 80px;
+    }
+    QPushButton:hover {
+        background-color: #e2e8f0;
+    }
+    QPushButton:pressed {
+        background-color: #cbd5e1;
+    }
+    QPushButton#ok_btn {
+        background-color: #3b82f6;
+        color: white;
+    }
+    QPushButton#ok_btn:hover {
+        background-color: #2563eb;
+    }
+    QPushButton#changeActive_btn {
+        background-color: transparent;
+        color: #1e293b;
+        border: 1px solid #cbd5e1;
+    }
+    QPushButton#changeActive_btn:hover {
+        background-color: #e2e8f0;
+        border-color: #94a3b8;
+    }
+   </string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="spacing">
+    <number>10</number>
+   </property>
+   <property name="leftMargin">
+    <number>10</number>
+   </property>
+   <property name="topMargin">
+    <number>10</number>
+   </property>
+   <property name="rightMargin">
+    <number>10</number>
+   </property>
+   <property name="bottomMargin">
+    <number>10</number>
+   </property>
+   <item>
+    <widget class="QTableView" name="tableView"/>
+   </item>
+   <item>
+    <widget class="QWidget" name="widget_2" native="true">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>40</height>
+      </size>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="QPushButton" name="changeActive_btn">
+        <property name="minimumSize">
+         <size>
+          <width>200</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>Выбрать активную модель</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="ok_btn">
+        <property name="minimumSize">
+         <size>
+          <width>80</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>OK</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="windowModality">
+   <enum>Qt::WindowModal</enum>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>700</width>
+    <height>379</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>700</width>
+    <height>0</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>16777215</width>
+    <height>16777215</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Результаты проверки качества</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">
+    QDialog {
+        background-color: #f0f2f5;
+        font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+    }
+    QLabel {
+        color: #1e293b;
+        font-size: 12px;
+        font-weight: 500;
+    }
+    QFrame#frame {
+        background-color: white;
+        border-bottom: 1px solid #e2e8f0;
+        border-top-left-radius: 12px;
+        border-top-right-radius: 12px;
+    }
+    QTabWidget::pane {
+        background-color: white;
+        border: none;
+        border-radius: 12px;
+    }
+    QTabWidget::tab-bar {
+        alignment: left;
+    }
+    QTabBar::tab {
+        background-color: #f1f5f9;
+        color: #1e293b;
+        padding: 8px 20px;
+        margin-right: 4px;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        font-weight: 500;
+    }
+    QTabBar::tab:selected {
+        background-color: white;
+        border-bottom: 2px solid #3b82f6;
+        color: #0f172a;
+    }
+    QTabBar::tab:hover:!selected {
+        background-color: #e2e8f0;
+    }
+    QTableView {
+        background-color: white;
+        border: none;
+        border-radius: 8px;
+        alternate-background-color: #f8fafc;
+        selection-background-color: #e0f2fe;
+        selection-color: #0f172a;
+        gridline-color: #e2e8f0;
+        font-size: 12px;
+    }
+    QHeaderView::section {
+        background-color: #f8fafc;
+        color: #0f172a;
+        padding: 6px;
+        border: none;
+        border-bottom: 1px solid #e2e8f0;
+        font-weight: 600;
+    }
+    QPushButton {
+        background-color: transparent;
+        border: none;
+        border-radius: 8px;
+        padding: 8px 16px;
+        font-size: 13px;
+        font-weight: 500;
+        color: #1e293b;
+        min-width: 80px;
+    }
+    QPushButton:hover {
+        background-color: #e2e8f0;
+    }
+    QPushButton:pressed {
+        background-color: #cbd5e1;
+    }
+    QPushButton#btn_acceptChanges {
+        background-color: #3b82f6;
+        color: white;
+    }
+    QPushButton#btn_acceptChanges:hover {
+        background-color: #2563eb;
+    }
+    QPushButton#btn_Close {
+        background-color: transparent;
+        color: #1e293b;
+    }
+    QPushButton#btn_Close:hover {
+        background-color: #fee2e2;
+        color: #dc2626;
+    }
+   </string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item>
+    <widget class="QFrame" name="frame">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>61</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>61</height>
+      </size>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <property name="leftMargin">
+       <number>16</number>
+      </property>
+      <property name="topMargin">
+       <number>12</number>
+      </property>
+      <property name="rightMargin">
+       <number>16</number>
+      </property>
+      <property name="bottomMargin">
+       <number>12</number>
+      </property>
+      <item>
+       <widget class="QLabel" name="all_images_label">
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Всего изображений: 0</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="passed_label">
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: #22c55e;</string>
+        </property>
+        <property name="text">
+         <string>Прошли проверку: 0 изобр.</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="failed_label">
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: #ef4444;</string>
+        </property>
+        <property name="text">
+         <string>Не прошли проверку: 0 изобр.</string>
+        </property>
+        <property name="textFormat">
+         <enum>Qt::PlainText</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QTabWidget" name="tabWidget">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>250</height>
+      </size>
+     </property>
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="tab">
+      <attribute name="title">
+       <string>Прошли проверку</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_3">
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QTableView" name="tableView_passed"/>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_2">
+      <attribute name="title">
+       <string>НЕ прошли проверку</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QTableView" name="tableView_failed"/>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+   <item>
+    <widget class="QWidget" name="widget" native="true">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>40</height>
+      </size>
+     </property>
+     <widget class="QPushButton" name="btn_acceptChanges">
+      <property name="geometry">
+       <rect>
+        <x>180</x>
+        <y>5</y>
+        <width>340</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>Продолжить с прошедшими проверку</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_Close">
+      <property name="geometry">
+       <rect>
+        <x>540</x>
+        <y>5</y>
+        <width>90</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Закрыть</string>
+      </property>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
